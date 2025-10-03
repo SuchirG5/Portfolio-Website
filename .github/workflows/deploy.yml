@@ -1,0 +1,40 @@
+name: Deploy Portfolio Subfolder to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Deploy when changes are pushed to the main branch
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 1. Setup Pages Environment
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 2. Upload Artifact (This targets your subfolder!)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # CRITICAL: Path points directly to your subfolder
+          path: 'Portfolio Website' 
+
+      # 3. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
