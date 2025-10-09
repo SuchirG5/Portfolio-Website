@@ -1,4 +1,4 @@
-name: Deploy Portfolio Subfolder to GitHub Pages
+name: Deploy Root Folder to GitHub Pages
 
 on:
   push:
@@ -27,12 +27,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 2. Upload Artifact (This targets your subfolder!)
+      # 2. Upload Artifact (THIS IS THE CHANGE)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # CRITICAL: Path points directly to your subfolder
-          path: '' 
+          # CRITICAL CHANGE: '.' tells the action to upload the entire root directory.
+          path: '.' 
 
       # 3. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
