@@ -1,9 +1,9 @@
 /* --- Global Styles & Reset --- */
 :root {
-    --primary-color: #355c7c; /* Professional Blue */
-    --accent-color: #97acc5; /* Blue for highlights */
+    --primary-color: #7887e8; /* Light Indigo Blue */
+    --accent-color: #80a8cb; /* Soft Blue/Gray */
     --text-color: #333;
-    --background-color: rgb(255, 255, 255);
+    --background-color: #f8f8f8;
     --card-background: #ffffff;
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-deep: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -20,9 +20,14 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
-    /* CRITICAL CHANGE: Reduced padding-top for a single fixed header */
-    padding-top: 100px; 
+    padding-top: 100px; /* Space for the fixed header */
     transition: background-color 0.3s;
+    
+    /* --- STICKY FOOTER FIX START --- */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* --- STICKY FOOTER FIX END --- */
 }
 
 .container {
@@ -31,7 +36,7 @@ body {
     margin: 0 auto;
 }
 
-/* --- Typography --- */
+/* --- Typography & Headings --- */
 h1 {
     font-size: 1.8em;
     color: var(--text-color);
@@ -79,7 +84,6 @@ a:hover {
 /* --- Fixed Header & Navigation --- */
 header {
     background: var(--card-background);
-    /* Simplified padding for the single header bar */
     padding: 15px 0; 
     position: fixed;
     width: 100%;
@@ -93,6 +97,7 @@ header .container {
     align-items: center;
 }
 
+/* Primary Page Links (Home, Portfolio, etc.) */
 .header-nav-links {
     margin-top: 5px;
     font-size: 0.9em;
@@ -104,11 +109,13 @@ header .container {
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.3s;
 }
-.header-nav-links a:hover {
+.header-nav-links a:hover,
+.header-nav-links a.active {
     color: var(--primary-color);
     border-bottom: 2px solid var(--accent-color);
 }
 
+/* Contact Icons */
 .contact-top .icon-link {
     font-size: 1.5em;
     margin-left: 20px;
@@ -118,9 +125,12 @@ header .container {
     color: var(--accent-color);
 }
 
-/* --- Main Content & Cards (UNCHANGED BELOW) --- */
+/* --- Main Content & Cards --- */
 main {
     padding: 40px 0;
+    /* --- STICKY FOOTER FIX START --- */
+    flex-grow: 1; /* Allows main content to fill all available space */
+    /* --- STICKY FOOTER FIX END --- */
 }
 
 .card {
@@ -135,7 +145,81 @@ main {
     transform: translateY(-3px);
 }
 
-/* Summary Section */
+/* --- Homepage Icon Grid Styling (UPDATED FOR AESTHETICS) --- */
+.icon-grid-section {
+    padding: 50px 30px;
+    display: flex; 
+    justify-content: center; /* Center the narrow cards */
+    gap: 30px; /* Increased gap */
+    flex-wrap: wrap; 
+    text-align: center; /* Center content inside the card */
+}
+
+.icon-card {
+    /* Made narrower for a cleaner look */
+    width: 250px; 
+    
+    background: #fdfdfd;
+    padding: 25px; /* Adjust padding for visual appeal */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+    
+    /* Changed to vertical stacking inside the card */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+    height: 200px; /* Set a fixed height for visual uniformity */
+
+    transition: all 0.3s;
+    color: var(--text-color); 
+    text-decoration: none;
+    text-align: center;
+}
+.icon-card:hover {
+    background-color: #eef2ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.icon-card i {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    font-size: 3em; 
+    padding-top: 10px; /* Space from the top edge */
+}
+.icon-card:hover i {
+    color: var(--accent-color);
+}
+.icon-card .card-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes description to the bottom */
+}
+.icon-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+.icon-card p {
+    font-size: 0.85em;
+    color: #666;
+    line-height: 1.3;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- Portfolio Content Styling (Unchanged) --- */
 .hero-section {
     border-left: 5px solid var(--accent-color);
     padding-left: 35px;
@@ -149,7 +233,7 @@ main {
     display: none; 
 }
 
-/* Experience & Education & Research Sections (Shared Styles) */
+/* Experience, Education, etc. Shared Styles */
 .job, .edu-entry, .project {
     margin-bottom: 25px;
     padding-bottom: 15px;
@@ -163,23 +247,6 @@ main {
     font-style: italic;
     margin-bottom: 10px;
     display: block;
-}
-.coursework {
-    font-size: 0.9em;
-    color: #777;
-}
-
-/* Project Styling */
-.project {
-    padding: 15px;
-    background: #fdfdfd;
-    border-radius: 5px;
-    border-left: 3px solid var(--primary-color);
-}
-.tech-stack {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 10px;
 }
 
 /* List Styling (Used for Experience and Honors) */
@@ -219,7 +286,8 @@ li::before {
     gap: 8px;
 }
 .skill-list p {
-    background: #eef2ff;
+    /* Updated background color slightly for better contrast against new primary */
+    background: #f0f3ff; 
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 0.95em;
@@ -235,11 +303,6 @@ footer {
     text-align: center;
     font-size: 0.9em;
 }
-footer .container {
-    display: flex;
-    justify-content: center;
-}
-
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
@@ -260,9 +323,28 @@ footer .container {
         margin-top: 10px;
         padding-top: 5px;
         border-top: 1px solid #eee;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-nav-links a {
+        margin: 0 8px;
+        font-size: 0.85em;
     }
     body {
-        /* Adjusted for the new combined header height on mobile */
         padding-top: 160px;
+    }
+    .icon-grid-section {
+        /* On mobile, stack cards vertically */
+        flex-direction: column; 
+    }
+    .icon-card {
+        min-width: 100%;
+        height: auto; /* Allow height to flex on mobile */
+        padding: 20px;
+    }
+    .icon-card i {
+        font-size: 2em;
     }
 }

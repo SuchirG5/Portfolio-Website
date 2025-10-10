@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suchir Godavarthi | Portfolio</title>
+    <title>Suchir Godavarthi | Home</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+    <!-- FIXED HEADER (TOP BAR) - SHARED ACROSS ALL PAGES -->
     <header>
         <div class="container">
             <div class="header-left">
                 <h1>Suchir Godavarthi</h1>
-                <p class="professional-title">Aerospace Engineering Student @ Purdue University</p>
+                <p class="professional-title">Aerospace Engineering Student & AI/ML Specialist</p>
+                <!-- NAVIGATION LINKS -->
+                <div class="header-nav-links">
+                    <a href="index.html" class="active">Home</a> | 
+                    <a href="portfolio.html">Portfolio</a> | 
+                    <a href="projects.html">Projects</a> | 
+                    <a href="#">Blog (TBD)</a>
+                </div>
             </div>
             <div class="contact-top">
                 <a href="mailto:suchir.godavarthi@gmail.com" title="Email" class="icon-link"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/suchir-godavarthi-71a222285" target="_blank" title="LinkedIn" class="icon-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/SuchirG5" target="_blank" title="GitHub" class="icon-link"><i class="fab fa-github"></i></a> 
+                <a href="YOUR_GITHUB_LINK_HERE" target="_blank" title="GitHub" class="icon-link"><i class="fab fa-github"></i></a> 
                 <a href="tel:+15719929379" title="Phone" class="icon-link"><i class="fas fa-phone-alt"></i></a>
             </div>
         </div>
@@ -27,128 +36,37 @@
 
     <main class="container">
         
-        <section id="summary" class="card hero-section">
-            <h2>Professional Summary</h2>
-            <p>Pursuing a degree as a Bachelor of Science in Aerospace Engineering at Purdue University. Deeply passionate about aerospace, AI and Machine Learning, computer science, teaching/mentorship, and scientific research. Interested in diving deeper into the software side of aerospace, looking at how to apply CS, AI, and ML to aerospace in areas such as propulsion, simulations, autonomous systems, and communications.</p>
-        </section>
-
-        <section id="education" class="card">
-            <h2>Education</h2>
-            <div class="edu-entry">
-                <h3>Purdue University College of Engineering | BS Aerospace Engineering</h3>
-                <p class="company">Expected Graduation: June 2029</p>
-            </div>
-            <div class="edu-entry">
-                <h3>Academy of Engineering and Technology (AET)</h3>
-                <p class="company">August 2021 - May 2025</p>
-                <p class="coursework">Relevant Coursework: AP Computer Science A, CS Junior Research (ML + app dev.), CS Senior Research.</p>
-            </div>
-        </section>
-
-        <section id="experience" class="card">
-            <h2>Professional Experience</h2>
+        <section class="card icon-grid-section">
+            <h2 class="visually-hidden">Navigation Links</h2> 
             
-            <div class="job">
-                <h3>Project Lead - Catalyx Space</h3>
-                <p class="company">Apr 2024 - May 2024</p>
-                <ul>
-                    <li>Led a team of 15+ student engineers to assemble and program a satellite payload to collect radiation data from Earth's orbit.</li>
-                    <li>Core mission was to build a 3D map to assess the impact of radiation on astronauts on future missions.</li>
-                    <li>Assembled a satellite ground station to communicate and relay information to and from the payload.</li>
-                    <li>Payload was launched by the Indian Space Research Organization (ISRO) in June 2024; mission completed in August 2024.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>AI/ML Instructor - KL University</h3>
-                <p class="company">Jan 2024 - Oct 2024</p>
-                <ul>
-                    <li>Taught 80+ bachelor's computer science students complex AI/ML concepts, including linear/logistic regression, neural networks, natural language processing, and computer vision.</li>
-                    <li>Helped students conduct real-world research using AI/ML in telecommunications, finance, healthcare, and education.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>AI/ML Intern - George Mason University AI4Defense</h3>
-                <p class="company">Jun 2024 - Jul 2024</p>
-                <ul>
-                    <li>Worked with the US Department of Defense (DoD) to develop a machine learning application to optimize the analysis of 700+ page National Defense Authorization Act (NDAA) documents.</li>
-                    <li>Presented solution to a panel of DoD employees and judges for evaluation, won second-place award.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Computer Science Instructor, Robotics Coach - Code Ninjas</h3>
-                <p class="company">Jan 2024 - Mar 2025</p>
-                <ul>
-                    <li>Worked as an instructor for 30+ students in computer science and game development programming, guiding them through JavaScript and C# projects.</li>
-                    <li>Worked as a robotics coach for a team of 6 students, guiding them through a LEGO robotics curriculum for the FIRST Lego League (FLL) competition.</li>
-                </ul>
-            </div>
-            
-            <div class="job">
-                <h3>Teaching Assistant - AVS Academy</h3>
-                <p class="company">Jun 2023 - Mar 2024</p>
-                <ul>
-                    <li>Taught a group of 15+ students fundamental AI/ML concepts, preparing them to conduct research in various healthcare applications.</li>
-                    <li>Developed an ML model to predict sickle cell anemia in patients.</li>
-                    <li>Taught 35+ underserved students in Uganda; concepts included fundamental math and science topics (algebra, geometry, chemistry).</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="research" class="card">
-            <h2>Key Research & Projects</h2>
-            
-            <div class="project">
-                <h3>Lumiere Research: Optimizing Aircraft Engine Health Prediction</h3>
-                <p class="tech-stack">Jun 2023 - Oct 2023</p>
-                <p>Developed a full-length research paper on applying ML and physics principles to optimize aircraft engine health prediction, mentored by a UIUC graduate student.</p>
-            </div>
-
-            <div class="project">
-                <h3>CS Senior Research: Optimizing Crop Yield Prediction</h3>
-                <p class="tech-stack">Aug 2024 - May 2025</p>
-                <p>Integrated ML with drones to develop an edge-computing solution to optimize crop yield prediction.</p>
-            </div>
-            
-        </section>
-
-        <section id="skills" class="card">
-            <h2>Technical & General Skills</h2>
-            <div class="skills-grid">
-                <div>
-                    <h3>General & Leadership</h3>
-                    <p class="skill-list">Teaching, Teamwork, Leadership, Research, Presentation Skills, Communication, Mentorship</p>
+            <a href="portfolio.html" class="icon-card">
+                <i class="fas fa-rocket fa-3x"></i>
+                <div class="card-text">
+                    <h3>Full Portfolio</h3>
+                    <p>Experience, Education, Skills, and Awards.</p>
                 </div>
-                <div>
-                    <h3>Programming & Development</h3>
-                    <p class="skill-list">Java, Python, JavaScript, C, React Native</p>
-                </div>
-                <div>
-                    <h3>AI/ML and Data Science</h3>
-                    <p class="skill-list">Computer Vision, Linear Regression, Logistic Regression, Neural Networks, Gradient Descent, ScikitLearn, Keras, TensorFlow, PyTorch, CNN, XGBoost</p>
-                </div>
-                <div>
-                    <h3>Cloud Computing (AWS)</h3>
-                    <p class="skill-list">EC2, S3, IAM, Lambda, DynamoDB, VPC (Compute, storage, networking, and database services)</p>
-                </div>
-                
-            </div>
-        </section>
+            </a>
 
-        <section id="honors" class="card">
-            <h2>Honors & Awards</h2>
-            <ul>
-                <li>National Merit Scholarship Recipient</li>
-                <li>AWS Cloud Practitioner Certification (to be renewed)</li>
-                <li>AWS Certified Machine Learning Specialty (in progress)</li>
-                <li>Second-Place Award: George Mason University AI4Defense Intern Competition</li>
-            </ul>
+            <a href="projects.html" class="icon-card">
+                <i class="fas fa-laptop-code fa-3x"></i>
+                <div class="card-text">
+                    <h3>Research & Projects</h3>
+                    <p>AI/ML applications, Satellite payload, and DoD internship.</p>
+                </div>
+            </a>
+
+            <a href="mailto:suchir.godavarthi@gmail.com" class="icon-card">
+                <i class="fas fa-paper-plane fa-3x"></i>
+                <div class="card-text">
+                    <h3>Contact Me</h3>
+                    <p>Send an email regarding opportunities or collaboration.</p>
+                </div>
+            </a>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Suchir Godavarthi. All Rights Reserved.</p>

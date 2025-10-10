@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchir Godavarthi | Research & Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- FIXED HEADER (TOP BAR) - SHARED ACROSS ALL PAGES -->
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <h1>Suchir Godavarthi</h1>
+                <p class="professional-title">Aerospace Engineering Student & AI/ML Specialist</p>
+                <!-- NAVIGATION LINKS -->
+                <div class="header-nav-links">
+                    <a href="index.html">Home</a> | 
+                    <a href="portfolio.html">Portfolio</a> | 
+                    <a href="projects.html" class="active">Projects</a> | 
+                    <a href="#">Blog (TBD)</a>
+                </div>
+            </div>
+            <div class="contact-top">
+                <a href="mailto:suchir.godavarthi@gmail.com" title="Email" class="icon-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/suchir-godavarthi-71a222285" target="_blank" title="LinkedIn" class="icon-link"><i class="fab fa-linkedin"></i></a>
+                <a href="YOUR_GITHUB_LINK_HERE" target="_blank" title="GitHub" class="icon-link"><i class="fab fa-github"></i></a> 
+                <a href="tel:+15719929379" title="Phone" class="icon-link"><i class="fas fa-phone-alt"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h2>Research Projects & Publications</h2>
+            <p>A focused collection of key projects, highlighting work in aerospace, machine learning, and computer vision. Click the **PDF Icon** to view the full document.</p>
+        </section>
+
+        <!-- PROJECT CARD 1: Aircraft Engine Health Prediction -->
+        <section class="card project-card-detail minimal-card-padding">
+            <div class="project-info">
+                <div class="project-header">
+                    <h3>Optimizing Aircraft Engine Health Prediction</h3>
+                    <!-- PDF Link -->
+                    <a href="./pdfs/engine_health_paper.pdf" target="_blank" class="pdf-link icon-link" title="View Research Paper (PDF)">
+                        <i class="fas fa-file-pdf fa-2x"></i>
+                    </a>
+                </div>
+                <!-- Updated formatting to use <strong> and removed double asterisks -->
+                <p class="project-meta"><strong>Domain:</strong> Aerospace Engineering, ML | Status: Completed | <strong>Date:</strong> Jun - Oct 2023</p>
+                <!-- CONCISE DESCRIPTION: One sentence only -->
+                <p>Developed **Physics-Informed Neural Networks (PINNs)** to improve the prediction accuracy of aircraft engine Remaining Useful Life (RUL) by merging sensor data with thermodynamic physics models.</p>
+                
+                <!-- ICON-BASED TECHNOLOGY LIST -->
+                <div class="tech-icons">
+                    <i class="fab fa-python" title="Python"></i>
+                    <i class="fas fa-brain" title="TensorFlow/Keras"></i>
+                    <i class="fas fa-rocket" title="Aerospace/Turbofan Data"></i>
+                </div>
+            </div>
+            
+            <div class="pdf-viewer-container">
+                <iframe src="./pdfs/engine_health_paper.pdf" class="pdf-viewer" title="PDF Viewer for Engine Health Prediction Paper"></iframe>
+                <p class="viewer-note">ACTION REQUIRED: Place the PDF file at the path **`./pdfs/engine_health_paper.pdf`** to view it here.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT CARD 2: Crop Yield Prediction -->
+        <section class="card project-card-detail minimal-card-padding">
+            <div class="project-info">
+                <div class="project-header">
+                    <h3>Edge-Computing for Optimized Crop Yield Prediction</h3>
+                    <!-- PDF Link -->
+                    <a href="./pdfs/crop_yield_paper.pdf" target="_blank" class="pdf-link icon-link" title="View Research Paper (PDF)">
+                        <i class="fas fa-file-pdf fa-2x"></i>
+                    </a>
+                </div>
+                <!-- Updated formatting to use <strong> and removed double asterisks -->
+                <p class="project-meta"><strong>Domain:</strong> Computer Vision, Agri-Tech | Status: In Progress (CS Senior Research) | <strong>Date:</strong> Aug 2024 - May 2025</p>
+                <!-- CONCISE DESCRIPTION: One sentence only -->
+                <p>Ongoing research integrating Computer Vision models (YOLOv8) deployed on **drones** (edge devices) to provide real-time, localized crop health assessment and yield prediction.</p>
+                
+                <!-- ICON-BASED TECHNOLOGY LIST -->
+                <div class="tech-icons">
+                    <i class="fab fa-python" title="Python"></i>
+                    <i class="fas fa-camera" title="Computer Vision / YOLOv8"></i>
+                    <i class="fas fa-microchip" title="Edge Computing / Raspberry Pi"></i>
+                </div>
+            </div>
+            <div class="pdf-viewer-container">
+                <iframe src="./pdfs/crop_yield_paper.pdf" class="pdf-viewer" title="PDF Viewer for Crop Yield Prediction Paper"></iframe>
+                <p class="viewer-note">ACTION REQUIRED: Place the PDF file at the path **`./pdfs/crop_yield_paper.pdf`** to view it here.</p>
+            </div>
+        </section>
+        
+        <!-- PROJECT CARD 3: AI4Defense NDAA Analysis -->
+        <section class="card project-card-detail minimal-card-padding">
+            <div class="project-info">
+                <div class="project-header">
+                    <h3>AI4Defense: NDAA Document Optimization Tool</h3>
+                    <!-- PDF Link -->
+                    <a href="./pdfs/NDAA_project_summary.pdf" target="_blank" class="pdf-link icon-link" title="View Research Summary (PDF)">
+                        <i class="fas fa-file-pdf fa-2x"></i>
+                    </a>
+                </div>
+                <!-- Updated formatting to use <strong> and removed double asterisks -->
+                <p class="project-meta"><strong>Domain:</strong> Natural Language Processing (NLP) | Status: Completed (Awarded Second Place) | <strong>Date:</strong> Jun - Jul 2024</p>
+                <!-- CONCISE DESCRIPTION: One sentence only -->
+                <p>Developed an **NLP-based ML application** for the U.S. Department of Defense (DoD) to rapidly analyze and extract key directives from large National Defense Authorization Act (NDAA) documents.</p>
+                
+                <!-- ICON-BASED TECHNOLOGY LIST -->
+                <div class="tech-icons">
+                    <i class="fab fa-python" title="Python"></i>
+                    <i class="fas fa-comments" title="Natural Language Processing (NLP)"></i>
+                    <i class="fas fa-server" title="Flask/Backend Development"></i>
+                </div>
+            </div>
+            <div class="pdf-viewer-container">
+                <div class="pdf-unavailable">
+                    <i class="fas fa-lock fa-3x"></i>
+                    <p>Document not available for public viewing due to restrictions. Contact me for a private summary.</p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Suchir Godavarthi. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
