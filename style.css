@@ -3,7 +3,7 @@
     --primary-color: #355c7c; /* Professional Blue */
     --accent-color: #97acc5; /* Blue for highlights */
     --text-color: #333;
-    --background-color: #840c0cff;
+    --background-color: rgb(255, 255, 255);
     --card-background: #ffffff;
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-deep: 0 8px 16px rgba(0, 0, 0, 0.1);
