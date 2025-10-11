@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suchir Godavarthi | Research & Projects</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <!-- Removed script.js defer since dynamic logic is no longer needed -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- FIXED HEADER (TOP BAR) - SHARED ACROSS ALL PAGES -->
@@ -35,98 +36,79 @@
 
     <main class="container">
         
-        <section class="card">
-            <h2>Research Projects & Publications</h2>
-            <p>A focused collection of key projects, highlighting work in aerospace, machine learning, and computer vision. Click the **PDF Icon** to view the full document.</p>
+        <section class="card intro-card">
+            <h2>Research Projects</h2>
+            <p>A focused collection of my key projects, highlighting work in aerospace, computer science, and machine learning. Click the PDF icon to access the full-text PDF.</p>
         </section>
 
-        <!-- PROJECT CARD 1: Aircraft Engine Health Prediction -->
-        <section class="card project-card-detail minimal-card-padding">
-            <div class="project-info">
+        <!-- NEW GRID LAYOUT FOR LARGE CARDS -->
+        <section class="project-grid-view">
+
+            <!-- PROJECT CARD 1: Engine Health (Large Viewer Tile) -->
+            <div class="card project-viewer-tile">
+                
                 <div class="project-header">
                     <h3>Optimizing Aircraft Engine Health Prediction</h3>
-                    <!-- PDF Link -->
-                    <a href="./pdfs/engine_health_paper.pdf" target="_blank" class="pdf-link icon-link" title="View Research Paper (PDF)">
-                        <i class="fas fa-file-pdf fa-2x"></i>
-                    </a>
+                    <div class="header-right-icons">
+                        <a href="Projects\Aircraft Engine Health Optimization.pdf" target="_blank" class="pdf-link icon-link" title="Open PDF in new tab">
+                            <i class="fas fa-file-pdf fa-2x"></i>
+                        </a>
+                        <!-- Tech stack icons -->
+                        <div class="tech-icons">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fas fa-brain" title="TensorFlow/Keras"></i>
+                            <i class="fas fa-rocket" title="Aerospace/Turbofan Data"></i>
+                        </div>
+                    </div>
                 </div>
-                <!-- Updated formatting to use <strong> and removed double asterisks -->
-                <p class="project-meta"><strong>Domain:</strong> Aerospace Engineering, ML | Status: Completed | <strong>Date:</strong> Jun - Oct 2023</p>
-                <!-- CONCISE DESCRIPTION: One sentence only -->
-                <p>Developed **Physics-Informed Neural Networks (PINNs)** to improve the prediction accuracy of aircraft engine Remaining Useful Life (RUL) by merging sensor data with thermodynamic physics models.</p>
-                
-                <!-- ICON-BASED TECHNOLOGY LIST -->
-                <div class="tech-icons">
-                    <i class="fab fa-python" title="Python"></i>
-                    <i class="fas fa-brain" title="TensorFlow/Keras"></i>
-                    <i class="fas fa-rocket" title="Aerospace/Turbofan Data"></i>
-                </div>
-            </div>
-            
-            <div class="pdf-viewer-container">
-                <iframe src="./pdfs/engine_health_paper.pdf" class="pdf-viewer" title="PDF Viewer for Engine Health Prediction Paper"></iframe>
-                <p class="viewer-note">ACTION REQUIRED: Place the PDF file at the path **`./pdfs/engine_health_paper.pdf`** to view it here.</p>
-            </div>
-        </section>
 
-        <!-- PROJECT CARD 2: Crop Yield Prediction -->
-        <section class="card project-card-detail minimal-card-padding">
-            <div class="project-info">
+                <!-- Large PDF Viewer Window -->
+                <div class="pdf-viewer-container large-tile-height">
+                    <iframe src="Projects\Aircraft Engine Health Optimization.pdf" class="pdf-viewer" title="PDF Viewer for Engine Health Prediction Paper"></iframe>
+                </div>
+
+                <!-- Short Description and Metadata at the Bottom -->
+                <div class="project-footer">
+                    <p class="short-description">Developed a physics-based long-short term memory (LSTM) model to improve the prediction accuracy of aircraft engine Remaining Useful Life (RUL) by merging sensor data with thermodynamic physics models.</p>
+                    <p class="meta-data">
+                        <strong>Domain:</strong> Aerospace Engineering, ML | <strong>Date:</strong> Jun - Oct 2023
+                    </p>
+                </div>
+            </div>
+
+            <!-- PROJECT CARD 2: Crop Yield (Large Viewer Tile) -->
+            <div class="card project-viewer-tile">
+                
                 <div class="project-header">
                     <h3>Edge-Computing for Optimized Crop Yield Prediction</h3>
-                    <!-- PDF Link -->
-                    <a href="./pdfs/crop_yield_paper.pdf" target="_blank" class="pdf-link icon-link" title="View Research Paper (PDF)">
-                        <i class="fas fa-file-pdf fa-2x"></i>
-                    </a>
+                    <div class="header-right-icons">
+                        <a href="Projects\Optimizing Crop Yield Prediction.pdf" target="_blank" class="pdf-link icon-link" title="Open PDF in new tab">
+                            <i class="fas fa-file-pdf fa-2x"></i>
+                        </a>
+                        <!-- Tech stack icons -->
+                        <div class="tech-icons">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fas fa-camera" title="Computer Vision / YOLOv8"></i>
+                            <i class="fas fa-microchip" title="Edge Computing / Raspberry Pi"></i>
+                        </div>
+                    </div>
                 </div>
-                <!-- Updated formatting to use <strong> and removed double asterisks -->
-                <p class="project-meta"><strong>Domain:</strong> Computer Vision, Agri-Tech | Status: In Progress (CS Senior Research) | <strong>Date:</strong> Aug 2024 - May 2025</p>
-                <!-- CONCISE DESCRIPTION: One sentence only -->
-                <p>Ongoing research integrating Computer Vision models (YOLOv8) deployed on **drones** (edge devices) to provide real-time, localized crop health assessment and yield prediction.</p>
-                
-                <!-- ICON-BASED TECHNOLOGY LIST -->
-                <div class="tech-icons">
-                    <i class="fab fa-python" title="Python"></i>
-                    <i class="fas fa-camera" title="Computer Vision / YOLOv8"></i>
-                    <i class="fas fa-microchip" title="Edge Computing / Raspberry Pi"></i>
-                </div>
-            </div>
-            <div class="pdf-viewer-container">
-                <iframe src="./pdfs/crop_yield_paper.pdf" class="pdf-viewer" title="PDF Viewer for Crop Yield Prediction Paper"></iframe>
-                <p class="viewer-note">ACTION REQUIRED: Place the PDF file at the path **`./pdfs/crop_yield_paper.pdf`** to view it here.</p>
-            </div>
-        </section>
-        
-        <!-- PROJECT CARD 3: AI4Defense NDAA Analysis -->
-        <section class="card project-card-detail minimal-card-padding">
-            <div class="project-info">
-                <div class="project-header">
-                    <h3>AI4Defense: NDAA Document Optimization Tool</h3>
-                    <!-- PDF Link -->
-                    <a href="./pdfs/NDAA_project_summary.pdf" target="_blank" class="pdf-link icon-link" title="View Research Summary (PDF)">
-                        <i class="fas fa-file-pdf fa-2x"></i>
-                    </a>
-                </div>
-                <!-- Updated formatting to use <strong> and removed double asterisks -->
-                <p class="project-meta"><strong>Domain:</strong> Natural Language Processing (NLP) | Status: Completed (Awarded Second Place) | <strong>Date:</strong> Jun - Jul 2024</p>
-                <!-- CONCISE DESCRIPTION: One sentence only -->
-                <p>Developed an **NLP-based ML application** for the U.S. Department of Defense (DoD) to rapidly analyze and extract key directives from large National Defense Authorization Act (NDAA) documents.</p>
-                
-                <!-- ICON-BASED TECHNOLOGY LIST -->
-                <div class="tech-icons">
-                    <i class="fab fa-python" title="Python"></i>
-                    <i class="fas fa-comments" title="Natural Language Processing (NLP)"></i>
-                    <i class="fas fa-server" title="Flask/Backend Development"></i>
-                </div>
-            </div>
-            <div class="pdf-viewer-container">
-                <div class="pdf-unavailable">
-                    <i class="fas fa-lock fa-3x"></i>
-                    <p>Document not available for public viewing due to restrictions. Contact me for a private summary.</p>
-                </div>
-            </div>
-        </section>
 
+                <!-- Large PDF Viewer Window -->
+                <div class="pdf-viewer-container large-tile-height">
+                    <iframe src="Projects\Optimizing Crop Yield Prediction.pdf" class="pdf-viewer" title="PDF Viewer for Crop Yield Prediction Paper"></iframe>
+                </div>
+
+                <!-- Short Description and Metadata at the Bottom -->
+                <div class="project-footer">
+                    <p class="short-description">Integrated ML models with drones through edge-computing devices to optimize the prediction of crop yield.</p>
+                    <p class="meta-data">
+                        <strong>Domain:</strong> Computer Vision, Agri-Tech | <strong>Date:</strong> Aug 2024 - May 2025
+                    </p>
+                </div>
+            </div>
+
+        </section>
 
     </main>
 
