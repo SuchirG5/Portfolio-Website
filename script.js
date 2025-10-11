@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Check for saved theme preference in localStorage
     const savedTheme = localStorage.getItem('theme');
     
-    // Function to set the theme
+    // Function to set the theme, apply class, and save preference
     const setTheme = (theme) => {
         if (theme === 'light') {
             body.classList.add('light-mode');
@@ -22,21 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggleButton.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for switching to light
             themeToggleButton.title = 'Switch to Light Mode';
         }
+        // Save the user's choice for future visits
         localStorage.setItem('theme', theme);
     };
 
-    // Initialize theme on load
+    // Initialize theme on load (Default to light if no preference is saved)
     if (savedTheme) {
-        // Use the theme saved from the user's previous session
         setTheme(savedTheme);
     } else {
-        // If no saved theme is found, explicitly set the default to light mode.
+        // If no theme is saved, explicitly set the default to Light Mode
         setTheme('light'); 
     }
-
+    
     // Add event listener to the toggle button
     themeToggleButton.addEventListener('click', () => {
+        // Determine the current theme based on the class presence
         const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+        // Switch to the opposite theme
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
     });
