@@ -3,7 +3,7 @@
     /* --- DARK MODE (Default) --- */
     --primary-color: #9fa8da; /* Slightly lighter Indigo Blue for pop on dark bg */
     --accent-color: #a8b8c7; /* Slightly lighter Soft Blue/Gray for pop on dark bg */
-    --text-color: #e0e0e0;   /* Light gray text */
+    --text-color: #e0e0e0;  /* Light gray text */
     --background-color: #1e1e1e; /* Dark charcoal background */
     --card-background: #252526; /* Slightly lighter card background */
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.4); /* Darker shadow for subtle depth */
@@ -144,6 +144,11 @@ body.light-mode .header-nav-links a {
     font-size: 1.5em;
     margin-left: 20px;
     color: var(--primary-color);
+    /* Added to fix inconsistent styling in HTML provided by user */
+    background: none; 
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 .contact-top .icon-link:hover {
     color: var(--accent-color);
@@ -450,6 +455,79 @@ body.light-mode .skill-list p {
     color: var(--primary-color); /* Primary color text on light pill */
 }
 
+/* --- BLOG PAGE STYLES (MODIFIED) --- */
+.blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-card {
+    display: flex; /* Activate flexbox for image + content side-by-side */
+    gap: 25px;
+    padding: 20px; /* Reduced padding for cleaner look */
+    align-items: flex-start; /* Align content to the top */
+    margin-bottom: 0 !important; 
+}
+
+.blog-thumb {
+    width: 120px;
+    min-width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0; /* Prevents the image from shrinking */
+    box-shadow: var(--shadow-light);
+}
+
+.blog-content {
+    flex-grow: 1; /* Allows content to take up remaining space */
+}
+
+/* --- THIS IS THE UPDATED SECTION --- */
+.blog-header {
+    display: flex;
+    flex-direction: row; /* Title on left, date on right */
+    justify-content: space-between; /* Pushes them apart */
+    align-items: baseline; /* Aligns their text baselines */
+    margin-bottom: 10px; /* Separator from description */
+}
+
+.blog-header h3 {
+    margin: 0;
+    color: var(--primary-color); 
+    font-size: 1.35em; /* Slightly larger font size */
+    margin-bottom: 0; 
+}
+
+.blog-date {
+    font-size: 0.9em;
+    color: var(--accent-color);
+    flex-shrink: 0; /* Prevents date from wrapping */
+    margin-left: 10px; /* Ensures space from title */
+}
+/* --- END OF UPDATE --- */
+
+.blog-description {
+    margin-top: 10px; 
+    margin-bottom: 15px; /* Increased margin for separation from link */
+    color: var(--text-color);
+    opacity: 0.9;
+    font-size: 0.95em;
+}
+
+.blog-link-container {
+    margin-top: 15px;
+    text-align: left;
+}
+.read-link {
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
 /* --- Footer --- */
 footer {
     background: var(--primary-color);
@@ -513,5 +591,25 @@ footer {
     }
     .project-header h3 {
         font-size: 1.4em;
+    }
+    /* Blog Card Mobile Adjustments */
+    .blog-card {
+        flex-direction: column; /* Stack image and content vertically on mobile */
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+    .blog-thumb {
+        width: 80%;
+        height: auto;
+    }
+    .blog-header {
+        flex-direction: column; /* Stack title and date vertically on mobile */
+        gap: 5px;
+        align-items: center;
+    }
+    .blog-link-container {
+        text-align: center;
+        width: 100%;
     }
 }
